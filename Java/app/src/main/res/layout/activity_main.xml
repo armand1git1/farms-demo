@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:fitsSystemWindows="true"
+
+
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#eee8dc"
+    android:minHeight="?attr/actionBarSize"
+    android:theme="@style/ToolbarTheme"
+    tools:context=".MainActivity">
+
+
+
+    <LinearLayout
+        android:id="@+id/layout_menu1"
+        android:layout_width="409dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/my_customlinearlayot_background"
+        android:layout_marginTop="25dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:padding="10dp"
+
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageView
+            android:id="@+id/imagefarm"
+            android:layout_width="30dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/layout_menu1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:srcCompat="@drawable/machine_farm_color_nobg"
+             />
+
+        <ImageView
+            android:id="@+id/imagegraph"
+            android:layout_width="30dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/layout_menu1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/graph_nobg" />
+
+
+
+        <ImageView
+            android:id="@+id/imageAdd"
+            android:layout_width="30dp"
+            android:layout_height="70dp"
+            android:layout_weight="1"
+            app:layout_constraintBottom_toTopOf="@+id/layout_menu1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:srcCompat="@drawable/add_icon_nobg" />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/layout_menu1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtfarmName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Farm"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtlocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txtfarmName"
+                android:layout_alignLeft="@+id/txtdetails"
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Location"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtdetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtlocation"
+                android:layout_marginEnd="2dp"
+
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Average"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+
+<!-- val -->
+        <TableRow
+            android:id="@+id/tableLayout2"
+
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="4d p"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tableLayout1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txtfarmNameval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Farm"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtlocationval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/txtfarmName"
+                android:layout_alignLeft="@+id/txtdetails"
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Location"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/txtdetailsval"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/txtlocation"
+                android:layout_marginEnd="2dp"
+
+                android:ems="4"
+                android:fontFamily="sans-serif"
+                android:inputType="text"
+                android:text="Average"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="24sp" />
+
+        </TableRow>
+
+
+    </TableLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
