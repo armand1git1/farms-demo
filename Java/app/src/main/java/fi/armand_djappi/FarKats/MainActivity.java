@@ -2,33 +2,48 @@ package fi.armand_djappi.FarKats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.ClipData;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
-import android.widget.TableLayout;
-import android.widget.TableRow;
+import android.widget.Toast;
 
-import androidx.appcompat.widget.Toolbar;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.Response;
+
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//import okhttp3.Response;
+
+
 public class MainActivity extends AppCompatActivity {
 
+    RequestQueue requestQueue;
+    JsonArrayRequest myrequest;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //Toolbar toolbar               = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
-        //toolbar.setNavigationIcon(R.drawable.ic_home);
-        // calling the display notification function with the data to display in the main page
-        //String[] the_payment    = this.displayNotification();
+        //RequestQueue For Handle Network Request
+        //RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        //todo : continue with populate date into listview n
+        getData();
+        /*
+        myrequest= getData();
+        myrequest.getBodyContentType();
+        System.out.println(myrequest.toString());
+        //requestQueue.toString(0).charAt("name");
+        */
+
         // creating an Empty Integer List
         List<farms_data_strings> threeStringsList = new ArrayList<>();
         farms_data_strings threeStrings = new farms_data_strings("djappi farm", "Tampere", "cal/3,5/2");
@@ -48,6 +63,73 @@ public class MainActivity extends AppCompatActivity {
         //listView.setAdapter(adapter);
         yourListView.setFocusable(true);
 
+    }
 
+    public void getData() {
+        //String url = "http://localhost:8080/v1/farms";
+        //String url = "http://localhost:8000/v1/farms";
+        //String url = "http://localhost/v1/farms";
+        //String url = "https://corona.lmao.ninja/v2/all/";
+
+
+        //String url = "http://10.0.2.2:8080/v1/farms";
+        //String url = "http://10.0.2.2/v1/farms";
+        //String url = "192.168.1.167:8080/v1/farms";
+        //todo : connect to localhost and retrive datat and
+        String url = "http://192.168.1.167:8080/v1/farms";
+
+        //String url = "192.168.1.167/localhost:8080/v1/farms";
+        //String url = "192.168.1.167/v1/farms";
+        //String url = "192.168.1.1:8080/v1/farms";
+        JsonArrayRequest jsonArrayRequest=null;
+
+
+        requestQueue = Volley.newRequestQueue(getApplicationContext());
+
+        //todo get data from Onresponse
+        try {
+             //final JSONObject object = new JSONObject();
+            //final JSONArray jsonarray = new JSONArray();
+
+            //JsonObjectRequest jsonObjectRequest = new JsonObjectRequest
+             jsonArrayRequest  = new JsonArrayRequest
+                    (Request.Method.GET,
+                            url,
+                            null,
+                            new Response.Listener<JSONArray>() {
+                                @Override
+                                //public void onResponse(JSONObject response) {
+                                public void onResponse(JSONArray jsonarray) {
+                                    //textView.setText("Response: " + response.toString());
+                                    //Toast.makeText(getApplicationContext(), "I am OK !" + response.toString(), Toast.LENGTH_LONG).show();
+                                    //System.out.println(Arrays.toString(JSONArray));
+                                    try {
+                                        for(int i = 0; i < jsonarray.length(); i++) {
+                                            JSONObject jsonobject = jsonarray.getJSONObject(i);
+
+                                            String name = jsonobject.getString("name");
+                                            //String goal = jsonobject.getString("goal");
+                                            System.out.println(name + "\n\n");
+                                        }
+                                    } catch (JSONException ex) {
+                                        ex.printStackTrace();
+                                    }
+                                }
+        }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+                            // TODO: Handle error
+                            //Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), (error).toString(), Toast.LENGTH_LONG).show();
+                            //System.out.println((error).toString());
+                        }
+                    });
+            requestQueue.add(jsonArrayRequest);
+            //System.out.println("here here _"+jsonArrayRequest.getBody("name"));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+       // return jsonArrayRequest;
     }
 }

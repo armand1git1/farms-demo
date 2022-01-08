@@ -10,7 +10,6 @@ android {
         targetSdkVersion 31
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -36,9 +35,12 @@ dependencies {
     implementation "androidx.startup:startup-runtime:1.0.0"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    //for rest api
+    implementation "com.amitshekhar.android:android-networking:1.0.2"
+    implementation 'com.android.volley:volley:1.1.1'
+
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
 }
