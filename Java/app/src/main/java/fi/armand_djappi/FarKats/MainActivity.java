@@ -2,6 +2,7 @@ package fi.armand_djappi.FarKats;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.net.DnsResolver;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -19,15 +20,22 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 //import okhttp3.Response;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
     RequestQueue requestQueue;
     JsonArrayRequest myrequest;
+
+    ListView yourListView;
+    List<farms_data_strings> threeStringsList = new ArrayList<>();
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         //RequestQueue For Handle Network Request
         //RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        getData();
         /*
         myrequest= getData();
         myrequest.getBodyContentType();
@@ -45,19 +52,25 @@ public class MainActivity extends AppCompatActivity {
         */
 
         // creating an Empty Integer List
-        List<farms_data_strings> threeStringsList = new ArrayList<>();
-        farms_data_strings threeStrings = new farms_data_strings("djappi farm", "Tampere", "cal/3,5/2");
-        threeStringsList.add(threeStrings);
+        //List<farms_data_strings> threeStringsList = new ArrayList<>();
+        //farms_data_strings threeStrings = new farms_data_strings("djappi farm", "Tampere", "cal/3,5/2");
+        getData();
+        //threeStringsList.add(threeStrings);
+        //System.out.println(Arrays.toString(threeStringsList));
+        System.out.println(Arrays.deepToString(threeStringsList.toArray()));
 
 
-        ListView yourListView = (ListView) findViewById(R.id.farms_list);
+
+        //ListView yourListView = (ListView) findViewById(R.id.farms_list);
 
        // get data from the table by the ListAdapter
 
+        yourListView = (ListView) findViewById(R.id.farms_list);
         //ListAdapter customAdapter = new ListAdapter(this, R.layout.farms_list_tools, List<yourItem>);
-        farms_data_adapter customAdapter = new farms_data_adapter(this, R.layout.farms_list_tools, threeStringsList);
-
-        yourListView.setAdapter(customAdapter);
+        //farms_data_adapter customAdapter = new farms_data_adapter(this, R.layout.farms_list_tools, threeStringsList);
+        //farms_data_adapter customAdapter = new farms_data_adapter(getApplicationContext(), R.layout.farms_list_tools, threeStringsList);
+        //yourListView.setAdapter(customAdapter);
+        //yourListView.setAdapter(customAdapter);
 
         yourListView.setTextFilterEnabled(true);
         //listView.setAdapter(adapter);
@@ -86,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
 
         requestQueue = Volley.newRequestQueue(getApplicationContext());
 
-        //todo get data from Onresponse
+        //todo improv function or move on
         try {
              //final JSONObject object = new JSONObject();
             //final JSONArray jsonarray = new JSONArray();
@@ -104,13 +117,26 @@ public class MainActivity extends AppCompatActivity {
                                     //Toast.makeText(getApplicationContext(), "I am OK !" + response.toString(), Toast.LENGTH_LONG).show();
                                     //System.out.println(Arrays.toString(JSONArray));
                                     try {
+
                                         for(int i = 0; i < jsonarray.length(); i++) {
                                             JSONObject jsonobject = jsonarray.getJSONObject(i);
 
                                             String name = jsonobject.getString("name");
+                                            String location = jsonobject.getString("location");
                                             //String goal = jsonobject.getString("goal");
                                             System.out.println(name + "\n\n");
+
+                                            farms_data_strings threeStrings = new farms_data_strings(name, location, "cal/3,5/2");
+                                            threeStringsList.add(threeStrings);
                                         }
+                                        //ListView yourListView = (ListView) findViewById(R.id.farms_list);
+                                        // get data from the table by the ListAdapter
+                                        //ListAdapter customAdapter = new ListAdapter(this, R.layout.farms_list_tools, List<yourItem>);
+
+                                        farms_data_adapter customAdapter = new farms_data_adapter(getApplicationContext(), R.layout.farms_list_tools, threeStringsList);
+                                        yourListView.setAdapter(customAdapter);
+
+
                                     } catch (JSONException ex) {
                                         ex.printStackTrace();
                                     }
@@ -132,4 +158,6 @@ public class MainActivity extends AppCompatActivity {
         }
        // return jsonArrayRequest;
     }
+
+
 }

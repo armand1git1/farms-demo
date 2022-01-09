@@ -39,7 +39,7 @@ public class farms_data_adapter extends ArrayAdapter<farms_data_strings> {
         if (p != null) {
             TextView tt1 = (TextView) v.findViewById(R.id.txtfarmNameval);
             TextView tt2 = (TextView) v.findViewById(R.id.txtlocationval);
-            TextView tt3 = (TextView) v.findViewById(R.id.txtdetailsval);
+           // TextView tt3 = (TextView) v.findViewById(R.id.txtdetailsval);
 
             if (tt1 != null) {
                 //tt1.setText(p1.getId());
@@ -53,11 +53,13 @@ public class farms_data_adapter extends ArrayAdapter<farms_data_strings> {
                 tt2.setText(p.getRight());
 
             }
-
+            /*
             if (tt3 != null) {
                 //tt3.setText(p.getDescription());
                 tt3.setText(p.getCentre());
             }
+
+             */
         }
 
         return v;
