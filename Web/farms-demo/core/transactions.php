@@ -52,7 +52,6 @@
   $list_all_farms  = Array();
   //http://localhost:8080/v1/farms
 
-  echo $global['api_url']."/v1/farms"; 
 
   $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");
   print_r($list_all_farms);

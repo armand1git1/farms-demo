@@ -91,31 +91,7 @@ function max_pk($table, $table_id)
 }
 
 
-/* This function will treat the variable $xml  for the file home  */     
-function language_xml_menu($xml,$lang)                                                     // Sorting the tag Sport
-{   
-  $tab_index    =Array();               
-  if (isset($xml))
-  {  
-   if (isset($lang)) 
-   {  
-     foreach($xml->$lang as $k1=>$language) 
-     {                    
-       if(isset($language))
-       {             
-          $tab_index['menu1']               = $language->menu1."";
-          $tab_index['menu2']               = $language->menu2."";
-          $tab_index['menu3']               = $language->menu3."";
-          $tab_index['menu4']               = $language->menu4."";
-          $tab_index['menu5']               = $language->menu5."";   
-          $tab_index['menu6']               = $language->menu6."";        
-          $tab_index['menu5_title']         = $language->menu5_title."";
-        }   
-      }    
-    }
-   } 
-  return($tab_index);                                      
- }
+
 
 function return_current_url($lang,$actual_link="",$module_new="")
 { 

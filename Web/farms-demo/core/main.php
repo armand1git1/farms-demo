@@ -1,4 +1,5 @@
 <?php
+/*
 
 $tab_value             = Array(); // Where data for xml corresponding to language are saved
 
@@ -51,4 +52,5 @@ $tab_value             = Array(); // Where data for xml corresponding to languag
    $tab_value=language_xml_index($xml,"french"); 
   } 
 }  
+*/
 ?>

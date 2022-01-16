@@ -15,7 +15,7 @@ require_once('includes/api.php');
 $current_date          = date('F d, Y');
 
 
-$global['module']      = isset($_REQUEST['module']) ? $_REQUEST['module'] : 'transactions';
+$global['module']      = isset($_REQUEST['module']) ? $_REQUEST['module'] : 'analytics';
 $global['script_name'] = (isset($global['module']) && $global['module']) ? $global['module'].'.php' : '';
 $global['action']      = "";if (isset($_GET['action']) && trim($_GET['action'])!="") $global['action']=$_GET['action'];
 
@@ -42,13 +42,6 @@ $demo_class            = "ui-button";
 $transaction_class     = "ui-button-active";
 
 
-if (isset($_GET['module']))
-{
-  $home_class          = "ui-button";
-  if (($_GET['module']=="demo") || ($_GET['module']=="payment"))    $demo_class         = "ui-button-active"; $transaction_class     = "ui-button";
-  if (($_GET['module']=="transactions"))                            $transaction_class  = "ui-button-active";
-}
-
 
  // Case 1 : language equals english or nothing
  // Case file : loading xml tag for the page
@@ -57,7 +50,6 @@ $xml       =get_array_xml($file);
 
 // Sorting the xml file, which becomes a tree,
 // english
-$tab_menu =language_xml_menu($xml,"english");
 
 // suomi
 $pos = strpos($actual_link, "lang=fi");
