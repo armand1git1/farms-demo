@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Armand Thierry DJAPPI, Freelancer. All rights reserved. -->
+<language>
+<english>
+<title               id="1" name="title_index"> Walkap merchant Dashboard</title>
+<subtitle            id="2" name="subtitle_index">Analytics </subtitle>
+
+<charac1             id="3" name="charac_index1">Y Axis(Vertical)</charac1>
+<charac2             id="4" name="charac_index2">X Axis(Horizontal)</charac2>
+<charac3             id="5" name="charac_index3">Amount of transaction(XAF)</charac3>
+<charac4             id="6" name="charac_index4">Months</charac4>
+<!--
+<charac5             id="7" name="charac_index5">Approved</charac5>
+<charac6             id="8" name="charac_index6">Declined</charac6>
+<charac7             id="9" name="charac_index7">Refund</charac7>
+<charac8             id="10" name="charac_index8">Authorization</charac8>
+-->
+<charac5             id="7" name="charac_index5">SENDED_TO_PAYEE</charac5>
+<charac6             id="8" name="charac_index6">TECHNICAL_MOMO_PROVIDER_PROBLEM</charac6>
+<charac7             id="9" name="charac_index7">INITIALIZED</charac7>
+<!--
+<charac8             id="10" name="charac_index8">Authorization</charac8>
+-->
+</english>
+
+
+<french>
+<title               id="1" name="title_index"> Walkap Panel marchant</title>
+<subtitle            id="2" name="subtitle_index">Analytique </subtitle>
+
+<charac1             id="3" name="charac_index1">Y Axe(Vertical)</charac1>
+<charac2             id="4" name="charac_index2">X Axe(Horizontal)</charac2>
+<charac3             id="5" name="charac_index3">Montant des transactions(F.cfa)</charac3>
+<charac4             id="6" name="charac_index4">Mois</charac4>
+
+<charac5             id="7" name="charac_index5">DISPONIBLE_POUR_DECAISSEMENT</charac5>
+<charac6             id="8" name="charac_index6">PROBLEME_TECHNIQUE_DU_FOURNISSEUR_MOMO</charac6>
+<charac7             id="9" name="charac_index7">INITIALIZE</charac7>
+<!--
+<charac8             id="10" name="charac_index8">Authorization</charac8>
+-->
+
+</french>
+</language>

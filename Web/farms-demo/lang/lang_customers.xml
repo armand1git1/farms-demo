@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Armand Thierry DJAPPI, Freelancer. All rights reserved. -->
+<language>
+<english>
+<title               id="1" name="title_index"> Walkap merchant Dashboard</title>
+<subtitle            id="2" name="subtitle_index">Add customer</subtitle>
+<subtitle1           id="21" name="subtitle_index">Edit customer</subtitle1>
+<subtitle2           id="22" name="subtitle_index">Delete customer</subtitle2>
+
+
+<Sub_sub_title1      id="3" name="Sub_sub_title1">Description</Sub_sub_title1>
+<Sub_sub_title2      id="33" name="Sub_sub_title2">Address</Sub_sub_title2>
+<Sub_sub_title3      id="34" name="Sub_sub_title3">Add payment method</Sub_sub_title3>
+<Sub_sub_title4      id="35" name="Sub_sub_title4">Responsible person</Sub_sub_title4>
+
+<charac1             id="4" name="charac_index1">Company</charac1>
+<charac2             id="5" name="charac_index2">Type</charac2>
+<charac3             id="6" name="charac_index3">Business' description</charac3>
+
+<charac4             id="7" name="charac_index4">Phone Number</charac4>
+<charac5             id="8" name="charac_index5">E-mail</charac5>
+<charac6             id="9" name="charac_index6">Country</charac6>
+<charac7             id="10" name="charac_index7">City</charac7>
+<charac8             id="11" name="charac_index8">Street</charac8>
+<charac81            id="111" name="charac_index81">Postal code</charac81>
+
+
+<textexcept_company    id="16" name="textexcept_company">Company is not valid !!!</textexcept_company>
+<textexcept_type       id="17" name="textexcept_type">Type is not valid !!!</textexcept_type>
+<textexcept_buss_desc  id="18" name="textexcept_desc">Business' description is not valid !!!</textexcept_buss_desc>
+<textexcept_number     id="19" name="textexcept_number">Phone number is not valid !!!</textexcept_number>
+<textexcept_mail       id="20" name="textexcept_mail">E-mail is not valid !!!</textexcept_mail>
+<textexcept_city       id="21" name="textexcept_city">City is not valid !!!</textexcept_city>
+<textexcept_street     id="22" name="textexcept_street">Street  is not valid !!!</textexcept_street>
+<text_update           id="23" name="text_update">Customer updated!!!</text_update>
+
+
+<button1               id="40" name="button1">Next </button1>
+<button2               id="41" name="button2">Edit </button2>
+<button3               id="42" name="button3">Delete </button3>
+
+</english>
+
+
+<french>
+<title                 id="1" name="title_index"> Walkap Panel marchant </title>
+<subtitle              id="2" name="subtitle_index">Ajouter un client</subtitle>
+<subtitle1             id="21" name="subtitle_index">Modifier le client</subtitle1>
+<subtitle2             id="22" name="subtitle_index">Supprimer le client</subtitle2>
+
+<Sub_sub_title1        id="3" name="Sub_sub_title1">Description</Sub_sub_title1>
+<Sub_sub_title2        id="33" name="Sub_sub_title2">Addresse</Sub_sub_title2>
+<Sub_sub_title3        id="34" name="Sub_sub_title3">Ajouter une méthode de paiement</Sub_sub_title3>
+<Sub_sub_title4        id="35" name="Sub_sub_title4">Personne Responsable</Sub_sub_title4>
+
+<charac1               id="4" name="charac_index1">Entreprise</charac1>
+<charac2               id="5" name="charac_index2">Type</charac2>
+<charac3               id="6" name="charac_index3">Description de l'activité</charac3>
+
+<charac4               id="7" name="charac_index4">Numéro de téléphone</charac4>
+<charac5               id="8" name="charac_index5">E-mail</charac5>
+<charac6               id="9" name="charac_index6">Pays</charac6>
+<charac7               id="10" name="charac_index7">Ville </charac7>
+<charac8               id="11" name="charac_index8">Rue</charac8>
+<charac81             id="111" name="charac_index81">Boîte postale</charac81> 
+
+
+<textexcept_company    id="16" name="textexcept_company">Entreprise est invalide !!!</textexcept_company>
+<textexcept_type       id="17" name="textexcept_type">Type est invalide !!!</textexcept_type>
+<textexcept_buss_desc  id="18" name="textexcept_desc">Description de l'actvité est invalide !!!</textexcept_buss_desc>
+<textexcept_number     id="19" name="textexcept_number">Numéro de téléphone est invalide !!!</textexcept_number>
+<textexcept_mail       id="20" name="textexcept_mail">E-mail est invalide !!!</textexcept_mail>
+<textexcept_city       id="21" name="textexcept_city">Ville est invalide !!!</textexcept_city>
+<textexcept_street     id="22" name="textexcept_street">La rue est invalide !!!</textexcept_street>
+<text_update           id="23" name="text_update">Client modifié !!!</text_update>
+
+
+
+<button1               id="40" name="button1">Suivant </button1>
+<button2               id="41" name="button2">Modifier </button2>
+<button3               id="42" name="button3">Supprimer </button3>
+
+</french>
+</language>

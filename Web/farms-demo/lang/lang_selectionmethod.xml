@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011 DJAPPI, Thierry. All rights reserved. -->
+<language>
+<english>
+<title             id="1" name="title_index">Simulation# Distant payment via Walkap merchant</title>
+<subtitle          id="2" name="sub_title_index1">Select your payment method</subtitle>
+<subtitle2         id="3" name="sub_title_index1">Available payment method</subtitle2>
+<button1           id="4" name="button1_index1">Next</button1>
+</english>
+
+
+
+<french>
+<title             id="1" name="title_index">Simulation# Paiement à distance via Walkap marchant</title>
+<subtitle          id="2" name="sub_title_index">Selectionnez votre moyen de paiement</subtitle>
+<subtitle2         id="3" name="text1">Moyen de paiement disponible </subtitle2>
+<button1           id="4" name="button1_index1">Suivant</button1>
+</french>
+</language>

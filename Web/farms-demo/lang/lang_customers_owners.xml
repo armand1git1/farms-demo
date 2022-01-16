@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Armand Thierry DJAPPI, Freelancer. All rights reserved. -->
+<language>
+<english>
+<title               id="1" name="title_index"> Walkap merchant Dashboard</title>
+<subtitle            id="2" name="subtitle_index">Add Responsible person </subtitle>
+<subtitle1           id="21" name="subtitle_index1">Edit Responsible person </subtitle1>
+<subtitle2           id="21" name="subtitle_index2">Delete Responsible person </subtitle2>
+
+
+<Sub_sub_title1      id="3" name="Sub_sub_title1">Responsible person</Sub_sub_title1>
+<Sub_sub_title2      id="31" name="Sub_sub_title2">Address</Sub_sub_title2>
+<Sub_sub_title3      id="32" name="Sub_sub_title3">Identification Elements</Sub_sub_title3>
+<Sub_sub_title4      id="33" name="Sub_sub_title4">Upload documents</Sub_sub_title4>
+
+<charac1             id="4" name="charac_index1">Firstname</charac1>
+<charac2             id="5" name="charac_index2">Lastname</charac2>
+<charac3             id="6" name="charac_index3">Country</charac3>
+<charac4             id="7" name="charac_index4">Date of birth((mm/dd/yyyy)</charac4>
+
+<charac5             id="8" name="charac_index5">Phone number</charac5>
+<charac6             id="9" name="charac_index6">Email</charac6>
+<charac7             id="10" name="charac_index7">Genre</charac7>
+
+<charac8             id="11" name="charac_index8">Street</charac8>
+<charac81            id="12" name="charac_index81">City</charac81>
+<charac9             id="13" name="charac_index9">Postal Code</charac9>
+<charac10            id="14" name="charac_index10">Country</charac10>
+
+<charac11            id="15" name="charac_index11">Identification</charac11>
+<charac12            id="16" name="charac_index12">Identification Number</charac12>
+<charac13            id="17" name="charac_index13">Expiration date((mm/dd/yyyy)</charac13>
+
+<charac14            id="18" name="charac_index14">Identification document</charac14>
+<charac15            id="181" name="charac_index15">Bills (electricity, water, telephone)</charac15>
+<charac16            id="182" name="charac_index16">Bank statement/Pay slip</charac16>
+<charac17            id="183" name="charac_index17">Kyc level</charac17>
+<charac18            id="184" name="charac_index18">Status</charac18>
+<charac19            id="185" name="charac_index19">Added</charac19>
+
+
+
+<textexcept_firstname  id="19"  name="textexcept_firstname">Firstname is not valid !!!</textexcept_firstname>
+<textexcept_name       id="191" name="textexcept_name">Lastname is not valid !!!</textexcept_name>
+<textexcept_dob        id="192" name="textexcept_dob">Date of birth is not valid !!!</textexcept_dob>
+<textexcept_number     id="193" name="textexcept_number">Phone number is not valid !!!</textexcept_number>
+<textexcept_mail       id="194" name="textexcept_mail">E-mail is not valid !!!</textexcept_mail>
+<textexcept_street     id="195" name="textexcept_street">Street  is not valid !!!</textexcept_street>
+<textexcept_city       id="196" name="textexcept_city">City is not valid !!!</textexcept_city>
+<textexcept_post_code  id="197" name="textexcept_post_code">Postal code is not valid !!!</textexcept_post_code>
+<textexcept_ident      id="198" name="textexcept_ident">Identification is not valid( Size shoud be less than 10 Mo, Only jpg,png,pdf are allowed ) !!!</textexcept_ident>
+<textexcept_bill       id="199" name="textexcept_bill">Bill is not valid( Size shoud be less than 10 Mo, Only jpg,png,pdf are allowed ) !!!</textexcept_bill>
+<textexcept_bank       id="200" name="textexcept_bank">Bank statement is not valid( Size shoud be less than 10 Mo, Only jpg,png,pdf are allowed ) !!!</textexcept_bank>
+
+<button1               id="40" name="button1">Save </button1>
+<button2               id="41" name="button2">Edit </button2>
+<button3               id="42" name="button3">Delete </button3>
+</english>
+
+
+<french>
+<title                 id="1"  name="title_index"> Walkap Panel marchant </title>
+<subtitle              id="2"  name="subtitle_index">Ajouter un responsable</subtitle>
+<subtitle1             id="21" name="subtitle_index1">Modifier un responsable </subtitle1>
+<subtitle2             id="22" name="subtitle_index2">Supprimer un responsable</subtitle2>
+
+<Sub_sub_title1        id="3" name="Sub_sub_title1">Responsable</Sub_sub_title1>
+<Sub_sub_title2        id="31" name="Sub_sub_title2">Addresse</Sub_sub_title2>
+<Sub_sub_title3        id="32" name="Sub_sub_title3">Elément d'identification</Sub_sub_title3>
+<Sub_sub_title4        id="33" name="Sub_sub_title4">Ajouter les documents</Sub_sub_title4>
+
+<charac1               id="4" name="charac_index1">Nom</charac1>
+<charac2               id="5" name="charac_index2">Prénom</charac2>
+<charac3               id="6" name="charac_index3">Country</charac3>
+<charac4               id="7" name="charac_index4">Date de naissance(mm/jj/aaaa)</charac4>
+
+<charac5               id="8" name="charac_index5">Numéro de téléphone</charac5>
+<charac6               id="9" name="charac_index6">Email</charac6>
+<charac7               id="10" name="charac_index7">Genre</charac7>
+
+<charac8               id="11" name="charac_index8">Rue</charac8>
+<charac81              id="12" name="charac_index81">Ville</charac81>
+<charac9               id="13" name="charac_index9">Boîte postale</charac9> 
+<charac10              id="14" name="charac_index10">Pays</charac10>
+
+<charac11              id="15" name="charac_index11">Identification</charac11>
+<charac12              id="16" name="charac_index12">Identification Number</charac12>
+<charac13              id="17" name="charac_index13">Date d'expiration(mm/jj/aaaa)</charac13>
+
+<charac14              id="18" name="charac_index14">Document d'identification</charac14>
+<charac15              id="181" name="charac_index15">Facture (électricité, eau, téléphone)</charac15>
+<charac16              id="182" name="charac_index16">Relevé banquaire/Fiche de paye</charac16>
+<charac17              id="183" name="charac_index17">Niveau du Kyc</charac17>
+<charac18              id="184" name="charac_index18">Statut</charac18>
+<charac19              id="185" name="charac_index19">Ajouté</charac19>
+
+<textexcept_firstname  id="19"  name="textexcept_firstname">Prénom est invalide !!!</textexcept_firstname>
+<textexcept_name       id="191" name="textexcept_name">Le nom est invalide !!!</textexcept_name>
+<textexcept_dob        id="192" name="textexcept_dob">Date de naissance est invalide !!!</textexcept_dob>
+<textexcept_number     id="193" name="textexcept_number">Numéro de téléphone est invalide !!!</textexcept_number>
+<textexcept_mail       id="194" name="textexcept_mail">E-mail est invalide !!!</textexcept_mail>
+<textexcept_street     id="195" name="textexcept_street">La rue est invalide !!!</textexcept_street>
+<textexcept_city       id="196" name="textexcept_city">Ville est invalide !!!</textexcept_city>
+<textexcept_post_code  id="197" name="textexcept_post_code">Le code postal est invalide !!!</textexcept_post_code>
+<textexcept_ident      id="198" name="textexcept_ident">L'identification est invalide( il doit être inférieure à 10 Mo. Juste les jpg,png,pdf sont acceptées. ) !!!</textexcept_ident>
+<textexcept_bill       id="199" name="textexcept_bill">La facture est invalide( il doit être inférieure à 10 Mo. Juste les jpg,png,pdf sont acceptées. ) !!!</textexcept_bill>
+<textexcept_bank       id="200" name="textexcept_bank">Le relevé banquaire est invalide( il doit être inférieure à 10 Mo. Juste les jpg,png,pdf sont acceptées. ) !!!</textexcept_bank>
+
+<button1              id="40" name="button1">Enregistrer </button1>
+<button2              id="41" name="button2">Modifier </button2>
+<button3              id="42" name="button3">Supprimer </button3>
+
+</french>
+</language>

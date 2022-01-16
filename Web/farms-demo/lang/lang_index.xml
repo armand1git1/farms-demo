@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2011 DJAPPI, Thierry. All rights reserved. -->
+<language>
+<english>
+<title             id="1" name="title_index">Orange Social Venture Prize# Walkap</title>
+<subtitle          id="2" name="sub_title_index">Storyline</subtitle>
+<text1_title       id="3" name="text1">Solution </text1_title>
+<text1_title_desc  id="4" name="desc1"> <![CDATA[<b>Mobile money</b>]]> Distant purchase via <![CDATA[<b>Orange money</b>]]> payment gateway is the solution for people without Bank account. Walkap services integrate mobile money API to merchants website.</text1_title_desc>
+<text2_title       id="5" name="text2">Solution </text2_title>
+<text2_title_desc  id="6" name="desc2"><![CDATA[<b>Visa Orange money</b>]]> integrated by Walkap services offers to customers with magnetic card a payment gateway  for rare currency such as XAF(F.CFA).
+</text2_title_desc>
+</english>
+
+
+
+<french>
+<title             id="1" name="title_index">Prix Orange de l'Entrepreneur Social# Walkap</title>
+<subtitle          id="2" name="sub_title_index">Scénarios</subtitle>
+<text1_title       id="3" name="text1">Solution </text1_title>
+<text1_title_desc  id="4" name="desc1">Payer à distance via une passerelle de paiement en ligne <![CDATA[<b>Orange mobile money</b>]]>, est la solution pour les individus ne disposant pas de compte bancaire. Walkap services intègre les passerelles de paiement pour les sites marchands.
+</text1_title_desc>
+<text2_title       id="5" name="text2">Solution </text2_title>
+<text2_title_desc  id="6" name="desc2"><![CDATA[<b>Visa Orange money</b>]]>  intégré par Walkap services offre aux clients détenteurs de cartes magnétiques une passerelle de paiement en ligne acceptant les monnaies rares tel que : <![CDATA[<br/>]]> XAF(FCFA).
+</text2_title_desc>
+</french>
+</language>

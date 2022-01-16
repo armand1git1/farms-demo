@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Armand Thierry DJAPPI, Freelancer. All rights reserved. -->
+<language>
+<english>
+<title               id="1"  name="title_index"> Walkap merchant Dashboard</title>
+<subtitle            id="2"  name="subtitle_index">Select payment methods </subtitle>
+<subtitle2           id="21" name="subtitle_index1">Payment methods list </subtitle2>
+
+<Sub_sub_title1      id="3" name="Sub_sub_title1">* Only data from checked boxes are processed.</Sub_sub_title1>
+
+<charac1             id="4" name="charac_index1">Payment method</charac1>
+<charac2             id="5" name="charac_index2">Frequency</charac2>
+<charac3             id="6" name="charac_index3">Estimated amount</charac3>
+<charac4             id="7" name="charac_index4">Added</charac4>
+<charac5             id="8" name="charac_index5">Currency</charac5>
+
+
+<textexcept_company    id="19"  name="textexcept_number">Check the box, fill the amount related  to your selected payment method !!!</textexcept_company>
+<textexcept_paymethods id="191" name="textexcept_paymethods">No payment method !!!</textexcept_paymethods>
+
+<button1               id="40" name="button1">Next </button1>
+<button2               id="42" name="button2">Save </button2>
+
+</english>
+
+
+<french>
+<title                 id="1" name="title_index"> Walkap Panel marchant </title>
+<subtitle              id="2" name="subtitle_index">Sélectionner la méthode de paiement</subtitle>
+<subtitle2             id="21" name="subtitle_index1">Liste des méthodes de paiement</subtitle2>
+<Sub_sub_title1        id="3" name="Sub_sub_title1">*Seulement les données des cases cochées sont traitées.</Sub_sub_title1>
+
+<charac1               id="4" name="charac_index1">Méthode de paiement</charac1>
+<charac2               id="5" name="charac_index2">Fréquence</charac2>
+<charac3               id="6" name="charac_index3">Montant estimé</charac3>
+<charac4               id="7" name="charac_index4">Ajouté</charac4>
+<charac5               id="8" name="charac_index5">Monnaie</charac5>
+
+<textexcept_company    id="19" name="textexcept_company">Cocher la case, remplir le montant estimée pour vos choix  !!!</textexcept_company>
+<textexcept_paymethods id="191" name="textexcept_paymethods">Pas de Méthode de paiement !!!</textexcept_paymethods>
+
+<button1             id="40" name="button1">Suivant </button1>
+<button2             id="40" name="button1">Enregistrer </button2>
+
+</french>
+</language>

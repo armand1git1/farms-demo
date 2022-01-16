@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2015 Armand Thierry DJAPPI, Freelancer. All rights reserved. -->
+<language>
+<english>
+<title               id="1" name="title_index"> Walkap merchant Dashboard</title>
+<subtitle            id="2" name="subtitle_index">Recent transactions</subtitle>
+<subtitle2           id="21" name="subtitle_index">Transaction's details</subtitle2>
+<sub_sub_title1      id="22" name="subtitle_index1">Transaction</sub_sub_title1>
+<sub_sub_title2      id="23" name="subtitle_index2">Sender</sub_sub_title2>
+<sub_sub_title3      id="24" name="subtitle_index3">Remittee</sub_sub_title3>
+
+
+<charac1             id="3" name="charac_index1">Date</charac1>
+<charac2             id="4" name="charac_index2">Status</charac2>
+<charac3             id="5" name="charac_index3">Id</charac3>
+<charac5             id="7" name="charac_index5">Customer</charac5>
+<charac6             id="8" name="charac_index6">Method</charac6>
+<charac7             id="9" name="charac_index7">Sender</charac7>
+<charac8             id="10" name="charac_index8">Amount</charac8>
+<charac9             id="11" name="charac_index9">Currency</charac9>
+
+<!-- Transaction's details -->
+<details1            id="31" name="charac_index31">Mobile MoneyId</details1>
+<details2            id="32" name="charac_index32">Mobile Owner</details2>
+<details3            id="33" name="charac_index33">Payment's method</details3>
+<details4            id="34" name="charac_index34">Amount</details4>
+<details5            id="35" name="charac_index35">Sender</details5>
+<details6            id="36" name="charac_index36">email</details6>
+
+<details7            id="37" name="charac_index37">Transaction completed.</details7>
+</english>
+
+
+
+<french>
+<title               id="1" name="title_index"> Walkap Panel marchant </title>
+<subtitle            id="2" name="subtitle_index">Transactions recentes</subtitle>
+<subtitle2           id="21" name="subtitle_index">Desciptif de la transaction</subtitle2>
+
+<sub_sub_title1      id="22" name="subtitle_index1">Transaction</sub_sub_title1>
+<sub_sub_title2      id="23" name="subtitle_index2">Emetteur</sub_sub_title2>
+<sub_sub_title3      id="24" name="subtitle_index3">Destinataire</sub_sub_title3>
+
+
+<charac1             id="3" name="charac_index1">Date</charac1>
+<charac2             id="4" name="charac_index2">Statut</charac2>
+<!--
+<charac3             id="5" name="charac_index3">Transaction</charac3>
+-->
+<charac3             id="5" name="charac_index3">Id</charac3>
+<!--
+<charac4             id="6" name="charac_index4">Paserelle</charac4>
+-->
+<charac5             id="7" name="charac_index5">Client</charac5>
+<charac6             id="8" name="charac_index6">Moyen</charac6>
+<charac7             id="9" name="charac_index7">Emetteur</charac7>
+<charac8             id="10" name="charac_index8">Montant </charac8>
+<charac9             id="11" name="charac_index9">Devise</charac9>
+
+<details1            id="31" name="charac_index31">Mobile MoneyId</details1>
+<details2            id="32" name="charac_index32">Propriètaire</details2>
+<details3            id="33" name="charac_index33">Méthode de paiement</details3>
+<details4            id="34" name="charac_index34">Montant</details4>
+<details5            id="35" name="charac_index35">Emetteur</details5>
+<details6            id="36" name="charac_index36">Adresse mail</details6>
+<details7            id="37" name="charac_index37">Transaction exécutée.</details7>
+
+</french>
+</language>
