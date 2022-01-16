@@ -54,7 +54,7 @@
 
 
   $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");
-  print_r($list_all_farms);
+  
 
 
    // Listing transactions status ( All status)

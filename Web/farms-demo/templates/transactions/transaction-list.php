@@ -46,6 +46,7 @@
       </div>
  </div>   
 
+ <!--
  <div class="row">
       <div class="input-field col s6">      
       Status :&nbsp; 
@@ -78,6 +79,7 @@
        </select> 
       </div>
  </div> 
+        -->
 
  <div class="row">
     <div class="input-field col s6">
@@ -98,11 +100,11 @@
      </th>
     
      <th>
-          Description
+          Location
      </th>
      
      <th>
-           Details
+           Established
      </th>
      
     </tr>
@@ -113,35 +115,34 @@
     <?php
          
      // list transactions 
-     if (isset($list_all_transactions)) // Checking if the array exists and contains value
-     {  
-      //print_r($list_all_transactions);       
+     if (isset($list_all_farms)) // Checking if the array exists and contains value
+     {      
       $i=0;      
 
-        if (isset($list_all_transactions->_embedded->transactionDetailList)) {
-         foreach ($list_all_transactions->_embedded->transactionDetailList as $transaction) 
+        if (isset($list_all_farms)) {
+         foreach ($list_all_farms as $farms) 
          {         
-         $i++; 
-         $transaction->id;
+        
+         $farms->farm_id;
          $style="height: 5px; background-color: #D3D3D3";    
          $result1 =($i % 2);
         if ($result1==True)    $style="height: 5px; background-color: #FFFFFF"; 
    
-        $link_transaction_details=$link_transactions."&action=details"."&view=".base64_encode($i); 
+        $link_farm_details=$link_transactions."&action=details"."&view=".base64_encode($i); 
      ?>
         <tr style="<?php if (isset($style)) echo $style; ?> ">
          <td style="height:3px; border-radius:0px;" width="50" colspan="1">
-         <a href="<?php echo $link_transaction_details; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
+         <a href="<?php echo $link_farm_details; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
           <strong>
            <?php 
               $prefix    ='1000000'; 
               
-              if (strlen('100000')>strlen($transaction->id)){
-               $nbr_diff =strlen('100000')-strlen($transaction->id); 
+              if (strlen('100000')>strlen($farms->farm_id)){
+               $nbr_diff =strlen('100000')-strlen($farms->farm_id); 
                $prefix   =substr($prefix, 0, (strlen('100000')-1));    
-               echo $prefix.$transaction->id;
+               echo $prefix.$farms->farm_id;
               }else{
-                echo $transaction->id;
+                echo $farms->farm_id;
               }
            ?>
           </strong> 
@@ -149,55 +150,46 @@
         </td>
 
         <td>
-          <?php if (isset($transaction->createDate)) echo strftime("%a, %d %b %g - %Hh %M", strtotime($transaction->createDate)); ?>
+          <?php if (isset($farms->name)) echo $farms->name; ?>
         </td>
 
          <td>
            <?php
-                 if (isset($transaction->transactionStatus->status)) echo $transaction->transactionStatus->status; 
+                 if (isset($farms->location)) echo $farms->location; 
            ?>
         </td>
 
+        <td>
+          <?php 
+          
+          // Information on my farms  
+          $farms_details  = Array();
+          $date           = null;     
+          if(isset($farms->farm_id) && $farms->farm_id>0) {
+            $farms_details  = CallAPI("GET", "",$global['api_url']."/v1/farms/".$farms->farm_id."");  
+            if(isset($farms_details->established)) {             
+              $date = $farms_details->established;
+            }
+          }
+          
+          if (isset($date) && $date!=null) {
+              echo strftime("%a, %d %b %g - %Hh %M", strtotime($date)); 
+          }
+          
+          ?>
+        </td>
 
  
        </tr>
 
-        <?php        
+        <?php    
+         $i++;     
       }
      }        
     } 
    ?>
     </tbody>
    </table>
-   <table style="margin-bottom:10px;align:right;width:100%">
-   <tr valign="bottom">
-    <td style="text-align: right;" colspan="7">
-    
-   <?php
- //echo base64_decode($_GET['pg']); echo "==";
-       if(isset($list_all_transactions->page->totalPages) && $list_all_transactions->page->totalPages>0) {         
-          for($i=1;$i<=$list_all_transactions->page->totalPages;$i++)
-          {
-           $class ="ui-button-active";
-           $link  =$link_transactions."&pg=".base64_encode($i)."";
-           if (isset($_GET["srchdate"]))  $link  =$link_transactions."&pg=".base64_encode($i)."&srchdate";           
-           if (isset($_GET["srchstatus"]))  $link  =$link_transactions."&pg=".base64_encode($i)."&srchstatus";
-           if (isset($_GET["srchstatus"]) && isset($_GET["srchdate"]))  $link  =$link_transactions."&pg=".base64_encode($i)."&srchdate&srchstatus"; 
-            if(
-                (!isset($_GET['pg']) && $i==1)
-                             ||
-                  (isset($_GET['pg']) && base64_decode($_GET['pg'])==$i)
-              )
-            {
-             $class="ui-button";
-            }        
-    ?>
-     <a href="<?php echo $link; ?>"><label class="<?php  echo $class; ?>" ><?php echo $i; ?></label></a>&nbsp;
-    <?php }                                                           }  ?>
-
-   </td>
-  </tr>
-  </table>
   </form>
 
 </div>

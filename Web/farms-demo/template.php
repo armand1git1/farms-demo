@@ -59,8 +59,9 @@ if (!defined('MAINFILE_INCLUDED'))
          <?php
            if (isset($global['module']) && trim($global['module'])!="login") { //Managing the module ("display or not")
           ?>
-          <li><a href="<?php if (isset($link_transactions)) echo $link_transactions; ?>">Farms</a></li>
+          
           <li><a href="<?php if (isset($link_analytics)) echo $link_analytics; ?>" >Graphs</a></li>
+          <li><a href="<?php if (isset($link_transactions)) echo $link_transactions; ?>">Farms</a></li>          
           <li><a href="<?php if (isset($link_demo)) echo $link_demo; ?>"><?php //if (isset($tab_menu)) echo $tab_menu["menu2"]; ?></a></li>
 
          <?php
