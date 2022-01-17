@@ -24,7 +24,8 @@ Here only, the list of farms is displayed.
 *** Challenges faced***: find an easy way to demo the solution with tester no need to configure anything.
 Android devices cannot fetch data on my localhost:8080 (In my log; 404 Error).
 
-*** Solution*** : Android devices must be in the same wifi as the computer and the IP address obtained after typing: Ipconfig on cmd or powershell (Windows should be used). Also, this address must be allowed in our Manifest.
+*** Solution*** : Android devices must be in the same wifi as the computer and the IP address obtained after typing: Ipconfig on cmd or powershell (Windows should be used). Also, our locla Ip address must must be allowed in our Manifest.
+Via the file network-security-config.xml. <domain includeSubdomains="true">192.168.1.167</domain>
 From the challenges faced, I decided to make the Api(exercise-server.jar) available online.
 
 -          Approach 1: Deploy it(exercise-server.jar) on Microsoft Azure: using: Maven (mvn) tools, Azure Cli.
