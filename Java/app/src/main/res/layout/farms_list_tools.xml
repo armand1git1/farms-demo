@@ -55,21 +55,6 @@
              android:textAlignment="viewStart"
              android:textColor="@android:color/black"
              android:textSize="20sp" />
-        <!--
-        <TextView
-            android:id="@+id/txtdetailsval"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/txtlocation"
-            android:layout_marginEnd="2dp"
 
-            android:ems="4"
-            android:fontFamily="sans-serif"
-            android:inputType="text"
-            android:text="Average"
-            android:textAlignment="center"
-            android:textColor="@android:color/black"
-            android:textSize="24sp" />
-            -->
     </TableRow>
 </TableLayout>

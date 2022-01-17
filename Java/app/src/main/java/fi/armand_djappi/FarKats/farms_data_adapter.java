@@ -13,9 +13,8 @@ import java.util.List;
 public class farms_data_adapter extends ArrayAdapter<farms_data_strings> {
     private int resourceLayout;
     private Context mContext;
-
+    // farms data
     public farms_data_adapter(Context context, int resource, List<farms_data_strings> items) {
-    //public farms_data_adapter(Context context, int resource, List<String> items) {
         super(context, resource, items);
         this.resourceLayout = resource;
         this.mContext = context;
@@ -37,6 +36,7 @@ public class farms_data_adapter extends ArrayAdapter<farms_data_strings> {
         farms_data_strings p = getItem(position);
 
         if (p != null) {
+            //setting data on textfield
             TextView tt1 = (TextView) v.findViewById(R.id.txtfarmNameval);
             TextView tt2 = (TextView) v.findViewById(R.id.txtlocationval);
            // TextView tt3 = (TextView) v.findViewById(R.id.txtdetailsval);
@@ -53,13 +53,6 @@ public class farms_data_adapter extends ArrayAdapter<farms_data_strings> {
                 tt2.setText(p.getRight());
 
             }
-            /*
-            if (tt3 != null) {
-                //tt3.setText(p.getDescription());
-                tt3.setText(p.getCentre());
-            }
-
-             */
         }
 
         return v;

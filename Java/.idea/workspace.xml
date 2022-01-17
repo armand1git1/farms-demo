@@ -11,7 +11,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="42618203-f467-4836-b65b-c5501c66d584" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/armand_djappi/FarKats/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/armand_djappi/FarKats/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/fi/armand_djappi/FarKats/farms_data_adapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/fi/armand_djappi/FarKats/farms_data_adapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/my_customlinearlayot_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/my_customlinearlayot_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/farms_list_tools.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/farms_list_tools.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/xml/network_security_config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,29 +216,29 @@
     </state>
     <state x="2106" y="274" key="FileChooserDialogImpl/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641243926770" />
     <state x="526" y="192" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1641645962968" />
-    <state width="1876" height="198" key="GridCell.Tab.0.bottom" timestamp="1641736584425">
+    <state width="1876" height="506" key="GridCell.Tab.0.bottom" timestamp="1642426350654">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="104" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1641485901821" />
-    <state width="1876" height="198" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641736584425" />
+    <state width="1876" height="506" key="GridCell.Tab.0.bottom/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1642426350654" />
     <state width="1322" height="166" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1641648887776" />
-    <state width="1876" height="198" key="GridCell.Tab.0.center" timestamp="1641736584424">
+    <state width="1876" height="506" key="GridCell.Tab.0.center" timestamp="1642426350654">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="104" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1641485901821" />
-    <state width="1876" height="198" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641736584424" />
+    <state width="1876" height="506" key="GridCell.Tab.0.center/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1642426350654" />
     <state width="1322" height="166" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1641648887776" />
-    <state width="1876" height="198" key="GridCell.Tab.0.left" timestamp="1641736584424">
+    <state width="1876" height="506" key="GridCell.Tab.0.left" timestamp="1642426350653">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="104" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1641485901821" />
-    <state width="1876" height="198" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641736584424" />
+    <state width="1876" height="506" key="GridCell.Tab.0.left/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1642426350653" />
     <state width="1322" height="166" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1641648887776" />
-    <state width="1876" height="198" key="GridCell.Tab.0.right" timestamp="1641736584424">
+    <state width="1876" height="506" key="GridCell.Tab.0.right" timestamp="1642426350654">
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state width="1322" height="104" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1641485901821" />
-    <state width="1876" height="198" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641736584424" />
+    <state width="1876" height="506" key="GridCell.Tab.0.right/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1642426350654" />
     <state width="1322" height="166" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1641648887776" />
     <state x="1375" y="12" width="978" height="738" key="SettingsEditor" timestamp="1641222054977">
       <screen x="1366" y="0" width="1920" height="1040" />

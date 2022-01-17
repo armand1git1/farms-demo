@@ -1,6 +1,8 @@
 # farms-demo
 Readme.
 Demo is made in 2 parts:
+
+Huom ! : before, any test (web/android), make sure that your devices is connected to internet
  
 ***Web version***: Inside the folder Web:  http://site.walkap.net/farms-demo/?lang=en&module=analytics
 
