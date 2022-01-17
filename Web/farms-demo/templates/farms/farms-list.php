@@ -128,7 +128,7 @@
          $result1 =($i % 2);
         if ($result1==True)    $style="height: 5px; background-color: #FFFFFF"; 
    
-        $link_farm_details=$link_transactions."&action=details"."&view=".base64_encode($i); 
+        $link_farm_details=$link_farms."&action=details"."&view=".base64_encode($i); 
      ?>
         <tr style="<?php if (isset($style)) echo $style; ?> ">
          <td style="height:3px; border-radius:0px;" width="50" colspan="1">

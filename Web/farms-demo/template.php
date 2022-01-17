@@ -17,7 +17,7 @@ if (!defined('MAINFILE_INCLUDED'))
 
   <meta name="theme-color" content="#33691e">
   <title>Farms Demo</title>
-  <meta name="description" content="Walkap Services fournit les solutions monétiques et les services permettant à ses clients de développer et mettre en œuvre des stratégies de paiement solides et innovantes.">
+  <meta name="description" content="Here we manipulate interesting data provided from a farm.">
   <link rel="shortcut icon" type="image/png"   href="images/favicon.png">
   <link rel="apple-touch-icon" sizes="144x144" href="images/logo-144-144.png">
   <link rel="apple-touch-icon" sizes="114x114" href="images/logo-114-114.png">
@@ -60,9 +60,11 @@ if (!defined('MAINFILE_INCLUDED'))
            if (isset($global['module']) && trim($global['module'])!="login") { //Managing the module ("display or not")
           ?>
           
-          <li><a href="<?php if (isset($link_analytics)) echo $link_analytics; ?>" >Graphs</a></li>
-          <li><a href="<?php if (isset($link_transactions)) echo $link_transactions; ?>">Farms</a></li>          
-          <li><a href="<?php if (isset($link_demo)) echo $link_demo; ?>"><?php //if (isset($tab_menu)) echo $tab_menu["menu2"]; ?></a></li>
+          <li><a href="<?php if (isset($link_graphs)) echo $link_graphs; ?>" >Graphs</a></li>
+          <li><a href="<?php if (isset($link_farms)) echo $link_farms; ?>">Farms</a></li>  
+          <!--        
+          <li><a href="# ?>"><?php //if (isset($tab_menu)) echo $tab_menu["menu2"]; ?></a></li>
+           -->
 
          <?php
           }

@@ -1,16 +1,16 @@
 <?php 
- $pages   ="transactions";     
+ $pages   ="farms";     
  
  switch ($global['action'])
  {                       
   case "details":
-   $pages .="/transaction-details.php";  
+   $pages .="/farms-details.php";  
    include($pages); 
   break; 
 
   
   default:   
-   $pages .="/"."transaction-list.php";  
+   $pages .="/"."farms-list.php";  
   include($pages); 
 
  }

@@ -1,30 +1,4 @@
 <?php
-// taking all the submodule of the module
-
-
-
- $payment_method     ="";
- $payment_logo       ="";
- $arr_payment_details="";
-
-
-
-
-  // Case file : loading xml tag for the page
-  $file      ="lang/lang_transaction.xml";
-  $xml       =get_array_xml($file);
-       
- // Sorting the xml file, which becomes a tree,
-  // english
-
-  // french
-  $pos = strpos($actual_link, "lang=fr");
-
-  if ((isset($pos) && $pos!==false))
-  {
-   $tab_value=language_xml_transaction($xml,"french");
-  }
-  $list_send_transactions =Array();
 
  switch ($action)
  {
@@ -50,12 +24,9 @@
   
 
   $list_all_farms  = Array();
-  //http://localhost:8080/v1/farms
 
-
-  $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");
+  $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");  // get all farms list
   
-
 
    // Listing transactions status ( All status)
   $list_all_transactions_status  = Array();
@@ -63,6 +34,8 @@
     $list_all_transactions_status  = CallAPI("GET", $_SESSION['token'], $global['api_url']."/transactions/status");
   }
   
+
+
 
   if(isset($_SESSION['token']) && isset($_SESSION['username'])) {
   $page =0; 
@@ -142,8 +115,7 @@
       if (!isset($status) || (isset($status) && $status=="") || (isset($status) && !empty($status) && (strcmp($status, "ANY") === 0) )) {
         // getting transactions by date and marchant
         if (isset($_SESSION['list_transactions'])) unset($_SESSION['list_transactions']); // destroys and create a new one  
-        //echo $global['api_url']."/accounts/".$_SESSION['username']."/transactions?"."dateAfter=".$date2."&dateBefore=".$date1."&page=".$page."&size=15&sort=DESC&sortField=createDate"; 
-        //die("lkfjklgjd");
+    
 
         $list_all_transactions = CallAPI("GET", $_SESSION['token'], $global['api_url']."/accounts/".$_SESSION['username']."/transactions?"."dateAfter=".$date2."&dateBefore=".$date1."&page=".$page."&size=15&sort=DESC&sortField=createDate");
         
@@ -159,8 +131,7 @@
       // transaction via marchant dates, via status
       if ((isset($status) && !empty($status) && (strcmp($status, "ANY") !== 0)) && ( (isset($_POST["transac_stat"])) || (isset($_GET['pg'])))) {
        $list_all_transactions = CallAPI("GET", $_SESSION['token'], $global['api_url']."/accounts/".$_SESSION['username']."/transactions?"."dateAfter=".$date2."&dateBefore=".$date1."&page=".$page."&size=15&sort=DESC&sortField=createDate"."&status=".$status);
-       //echo $global['api_url']."/accounts/".$_SESSION['username']."/transactions?"."dateAfter=".$date2."&dateBefore=".$date1."&page=".$page."&size=15&sort=DESC&sortField=createDate"."&status=".$status;
-       //die();
+    
        $_SESSION['list_transactions'] =$list_all_transactions;
         redirectTo("index.php?lang=".$lang."&module=transactions&srchdate&srchstatus");
       }

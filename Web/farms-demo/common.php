@@ -32,8 +32,8 @@ $link_fr               =  return_current_url("fr",$actual_link);
 // link for the menu
 $lang                  =  "en";
 if (isset($_GET["lang"]) && $_GET["lang"]=="fr") $lang  ="fi";              // changing language in french 
-$link_transactions     =  return_current_url($lang,$actual_link,"transactions"); // link to transaction module
-$link_analytics        =  return_current_url($lang,$actual_link,"analytics");    // link to analytics module
+$link_farms            =  return_current_url($lang,$actual_link,"farms"); // link to transaction module
+$link_graphs           =  return_current_url($lang,$actual_link,"graphs");    // link to analytics module
 
 
 // UI class for button
