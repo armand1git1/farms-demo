@@ -16,7 +16,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="420058dc9b92a439" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Android_ARMv7a" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -234,10 +234,10 @@
       <screen x="1366" y="0" width="1920" height="1040" />
     </state>
     <state x="1375" y="12" width="978" height="738" key="SettingsEditor/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641222054977" />
-    <state x="2021" y="342" key="com.intellij.ide.util.TipDialog" timestamp="1641732644940">
-      <screen x="1366" y="0" width="1920" height="1040" />
+    <state x="467" y="244" key="com.intellij.ide.util.TipDialog" timestamp="1642422846652">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="467" y="244" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1641668355778" />
+    <state x="467" y="244" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@0.0.1366.728" timestamp="1642422846652" />
     <state x="2021" y="342" key="com.intellij.ide.util.TipDialog/0.0.1366.728/1366.0.1920.1040@1366.0.1920.1040" timestamp="1641732644940" />
     <state x="466" y="239" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1641316731074" />
     <state x="2115" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1641504185639">

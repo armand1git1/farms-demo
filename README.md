@@ -11,14 +11,15 @@ If you cannot see data, text or email me (My old computer might be closed).
 For building, I used my teenager’s package: php, html,css, JavaScript(Jquery).
 -          Coding Patterns: mvc technologies (clear separation between code and design).
 -          Code Source: Web/farms-demo
-
+-          Platform : Visual Studio Code version : 1.63.2 (user setup), Laragon  Full 4.0.14, php 7.4.25
 
 ***Android Version***:  To be cloned and configured (localhost:8080 cannot be accessible via Android devices, read Challenges faced below)
 
--  Technologies: Java/Android (Api 31), Volley and Asynchronous tasks used to fetch data on  Api (exercise-server.jar).  ListView.  
+-  Technologies: Java/Android (minSdkVersion 28, targetSdkVersion 31), Volley and Asynchronous tasks used to fetch data on  Api (exercise-server.jar).  ListView.  
 Here only, the list of farms is displayed.  
 -  Coding Patterns: MVP ( model View presenter)
 -  Code source : Java/. 
+-  Platform : Android Studio 4.0.1
 
 *** Challenges faced***: find an easy way to demo the solution with tester no need to configure anything.
 Android devices cannot fetch data on my localhost:8080 (In my log; 404 Error).
