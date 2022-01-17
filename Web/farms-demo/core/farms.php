@@ -4,31 +4,26 @@
  {
   case "details":
    // display completed details about a transaction 
-    if(isset($_SESSION['token']) && isset($_SESSION['username'])) {
+ 
    
-      $info_usr_transact             =Array();      
-      $id =null;
-   
-      if (isset($_GET['view'])) {               // get the transaction val 
-        $id = base64_decode($_GET['view'])-1;  // decode and decrease so that it can fit the array logic         
+      $info_farms_details             =Array();      
+      $myfarms_details                =Array();
+      $myfamr_index                   =0;
+      $Array_sensortype               = Array("temperature","php","rainfall");
 
-        if(isset($_SESSION['list_transactions']->_embedded->transactionDetailList[$id])) {
-          $info_usr_transact             = $_SESSION['list_transactions']->_embedded->transactionDetailList[$id];    // single transaction details 
-       }        
-      } 
-    }  
-   break;
+  if (isset($_GET['view'])) {               // get the transaction val 
+    $farm_index_decode            = base64_decode($_GET['view']);  // decode and decrease so that it can fit the array logic         
+    //echo $farm_index_decode;  
+    if(intval($farm_index_decode)>0) {
+
+      $myfamr_index               = $farm_index_decode;             
+      $myfarms_details            = CallAPI("GET", "",$global['api_url']."/v1/farms/".$myfamr_index."");  // My farms details
   
 
-  default:
-  
-
-  $list_all_farms  = Array();
-
-  $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");  // get all farms list
-  
-
-   // Listing transactions status ( All status)
+      $info_farms_details         = CallAPI("GET", "",$global['api_url']."/v1/farms/".$myfamr_index."/stats");  // get all farms stats 
+    }
+    
+       // Listing transactions status ( All status)
   $list_all_transactions_status  = Array();
   if (isset($_SESSION['token'])) {
     $list_all_transactions_status  = CallAPI("GET", $_SESSION['token'], $global['api_url']."/transactions/status");
@@ -37,7 +32,13 @@
 
 
 
-  if(isset($_SESSION['token']) && isset($_SESSION['username'])) {
+  $total_pages=0; 
+  
+  if (count($info_farms_details->measurements)>0 && count($info_farms_details->measurements)/50) {
+    $total_pages= count($info_farms_details->measurements)/500;
+  }
+  
+
   $page =0; 
   if (isset($_GET['pg']) && base64_decode($_GET['pg'])>0) {
     $page   =base64_decode($_GET['pg'])-1; 
@@ -46,11 +47,17 @@
   //echo $page; 
     
   if (!isset($_GET["srchdate"]) ) {    
-    $list_all_transactions = CallAPI("GET", $_SESSION['token'], $global['api_url']."/accounts/".$_SESSION['username']."/transactions"."?page=".$page."&size=15&sort=DESC&sortField=createDate");
+    if(isset($_SESSION['username'])) {
+      $list_all_transactions = CallAPI("GET", $_SESSION['token'], $global['api_url']."/accounts/".$_SESSION['username']."/transactions"."?page=".$page."&size=15&sort=DESC&sortField=createDate"); 
+    }
+    
     if(isset($_SESSION["date1"]))  unset($_SESSION["date1"]);
     if(isset($_SESSION["date2"]))  unset($_SESSION["date2"]);
     if (isset($_SESSION['list_transactions'])) unset($_SESSION['list_transactions']); // destroys and create a new one
-    $_SESSION['list_transactions'] = $list_all_transactions;        
+    if (isset($list_all_transactions)) {
+      $_SESSION['list_transactions'] = $list_all_transactions;        
+    }
+    
   }
  
   // clear transaction status if not needed
@@ -135,17 +142,16 @@
        $_SESSION['list_transactions'] =$list_all_transactions;
         redirectTo("index.php?lang=".$lang."&module=transactions&srchdate&srchstatus");
       }
-
     }
 
     
-      // transaction via marchant, via status
-      $status_query="";
+    // transaction via marchant, via status
+    $status_query="";
       
-     if ((strcmp($status, "ANY") !== 0) && !isset($_GET["srchdate"])) {  
+    if ((strcmp($status, "ANY") !== 0) && !isset($_GET["srchdate"])) {  
       //die("No status selected ");
       $status_query1=""; // manage the and clause
-        if (trim($date_query)!="") $status_query1="and";
+      if (trim($date_query)!="") $status_query1="and";
       $status_query=$status_query1." "."transactions.transaction_status='$status'"." ";
       $list_all_transactions = CallAPI("GET", $_SESSION['token'], $global['api_url']."/accounts/".$_SESSION['username']."/transactions?"."page=".$page."&size=15&sort=DESC&sortField=createDate"."&status=".$status);
  
@@ -170,15 +176,28 @@
     $where_clause="";
     if (($date_query!="") || ($status_query!="") || ($currency_query!="")) $where_clause="where";
     $req = "select *from transactions ".$where_clause." ".$date_query."  ".$status_query."  ".$currency_query." order by transactions.transaction_date desc";
-  }
+   }
  
-  $page= 1;
-  if (isset($_GET['pg']) && base64_decode($_GET['pg'])>0)
-  {
-   $page=base64_decode($_GET['pg']);
-  }
+   $page= 1;
+   if (isset($_GET['pg']) && base64_decode($_GET['pg'])>0)
+   {
+    $page=base64_decode($_GET['pg']);
+   } 
 
-  if(isset($_SESSION['list_transactions'])) $list_all_transactions= $_SESSION['list_transactions'];
- }
+   if(isset($_SESSION['list_transactions'])) {
+    $list_all_transactions= $_SESSION['list_transactions'];
+   } 
+  } 
+ break;
+  
+
+ default:
+  
+
+  $list_all_farms  = Array();
+
+  $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");  // get all farms list
+  
+
 }
 ?>

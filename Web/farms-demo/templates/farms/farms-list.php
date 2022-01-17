@@ -34,61 +34,9 @@
 
   	<h5 class="header center boutique section-title">List of farms</h5>
   
-<div class="row">
-      <div class="input-field col s6">      
-        <input id="datepicker" type="text" class="validate"  name="date_from" value="<?php if(isset($_POST['date_from'])) {echo $_POST['date_from'];}else{if(isset($_SESSION["date1"])) echo $_SESSION["date1"];}   ?>" autocomplete="off">
-        <label for="datepicker">From:(mm/dd/yyyy)</label>
-      </div>
-
-      <div class="input-field col s6">
-        <input id="datepicker2" type="text" class="validate" name="date_to" value="<?php if(isset($_POST['date_to'])) {echo $_POST['date_to'];}else{if(isset($_SESSION["date2"]))  echo $_SESSION["date2"];} ?>" autocomplete="off">
-        <label for="date_to">To:(mm/dd/yyyy)</label>
-      </div>
- </div>   
-
- <!--
- <div class="row">
-      <div class="input-field col s6">      
-      Status :&nbsp; 
-      <select name="transac_stat" class="text">
-        <option value="ANY" <?php if (isset($_POST["transac_stat"]) &&  ($_POST["transac_stat"]=="SELECTED")) echo "selected"; ?>>ANY</option>  
-        <?php 
-           
-          if(isset($list_all_transactions_status) && is_array($list_all_transactions_status)){
-             for($i=0; $i<count($list_all_transactions_status); $i++) {   
-            ?>      
-            <option value="<?php if (isset($list_all_transactions_status[$i])) echo $list_all_transactions_status[$i]; ?>" <?php if (isset($_POST["transac_stat"]) && ($_POST["transac_stat"]==$list_all_transactions_status[$i])) {echo "selected";}else{if(isset($_SESSION["status"]) && ($_SESSION["status"]==$list_all_transactions_status[$i])) echo "selected";} ?>>
-                    <?php if  (isset($list_all_transactions_status[$i])) echo $list_all_transactions_status[$i]; ?> 
-            </option>
-          <?php
-            }
-          } 
-          ?>         
-       </select>
-       
-      </div>
-
-      <div class="input-field col s6">
-      Currency :&nbsp; 
-      <select name="transac_cur" class="text">
-           <option value="any" <?php if (isset($_POST["transac_cur"]) &&  ($_POST["transac_cur"]=="any")) echo "selected"; ?>>Any</option>
-           <option value="xaf" <?php if (isset($_POST["transac_cur"]) &&  ($_POST["transac_cur"]=="xaf")) echo "selected"; ?>>XAF</option>
-           <option value="eur" <?php if (isset($_POST["transac_cur"]) &&  ($_POST["transac_cur"]=="eur")) echo "selected"; ?>>Eur</option>
-           <option value="dollar" <?php if (isset($_POST["transac_cur"]) &&  ($_POST["transac_cur"]=="dollar")) echo "selected"; ?>>Us Dollar</option>
-           <option value="gbp" <?php if (isset($_POST["transac_cur"]) &&  ($_POST["transac_cur"]=="gbp")) echo "selected"; ?>>Gbp</option>
-       </select> 
-      </div>
- </div> 
-        -->
-
- <div class="row">
-    <div class="input-field col s6">
-      <input class="btn" type="submit" name="paiement_method" value="Search" >
-    </div>  
- </div> 
 
      <table style="border-spacing: 0px; width:100%; margin-left:auto;margin-right:auto;">
-     <!-- Transactions -->
+     <!-- Farms -->
      <thead>
      <tr>
       <th>
@@ -102,8 +50,12 @@
      <th>
           Location
      </th>
-     
+
      <th>
+          &nbsp;
+     </th>
+     
+     <th style="align:center">
            Established
      </th>
      
@@ -114,7 +66,7 @@
   
     <?php
          
-     // list transactions 
+     // list of farms
      if (isset($list_all_farms)) // Checking if the array exists and contains value
      {      
       $i=0;      
@@ -127,12 +79,15 @@
          $style="height: 5px; background-color: #D3D3D3";    
          $result1 =($i % 2);
         if ($result1==True)    $style="height: 5px; background-color: #FFFFFF"; 
-   
-        $link_farm_details=$link_farms."&action=details"."&view=".base64_encode($i); 
+        $my_id    =0;   
+        if(isset($farms->farm_id)) $my_id  = $farms->farm_id; 
+       
+        $link_farm_details=$link_farms."&action=details"."&view=".base64_encode($my_id); 
+        $link_farm_location=$link_farms."&action=location"."&view=".base64_encode($my_id); 
      ?>
         <tr style="<?php if (isset($style)) echo $style; ?> ">
          <td style="height:3px; border-radius:0px;" width="50" colspan="1">
-         <a href="<?php echo $link_farm_details; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
+         <a title="click to have statistics" href="<?php echo $link_farm_details; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
           <strong>
            <?php 
               $prefix    ='1000000'; 
@@ -153,10 +108,19 @@
           <?php if (isset($farms->name)) echo $farms->name; ?>
         </td>
 
-         <td>
-           <?php
+         <td style="align:right">
+         <a title="See my location" href="<?php if(isset($link_farm_location)) echo $link_farm_location; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
+            <?php
                  if (isset($farms->location)) echo $farms->location; 
-           ?>
+            ?>       
+         </a>           
+        </td>
+
+
+        <td style="align:left"> 
+         <a title="See my location" href="<?php if(isset($link_farm_location)) echo $link_farm_location; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
+          <img  title="My location" width="25" height="20"  src="images/location_icon_nobg.png"/>
+         </a>
         </td>
 
         <td>
