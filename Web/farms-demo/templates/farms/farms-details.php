@@ -49,7 +49,7 @@
 
  <div class="row">
       <div class="input-field col s6">      
-      Sensor :&nbsp; 
+      Sensor :&nbsp;        <input  type="hidden"  name="farm_detail_id"  maxlength="100" value="">    
       <select name="sensor_type" class="text">
         <option value="ANY" <?php if (isset($_POST["transensor_typesac_stat"]) &&  ($_POST["sensor_type"]=="SELECTED")) echo "selected"; ?>>ANY</option>  
         <?php 
