@@ -1,13 +1,3 @@
-<script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-
-  $( function() {
-    $( "#datepicker2" ).datepicker();
-  } );
-  </script>
-
 <div class="row">
 <div id="div_1" class="container">
  <form action="" method="post" name="search_trans">
@@ -30,131 +20,72 @@
 
 
 
+  <h5 class="header center boutique section-title">Farm's Location</h5>
 
+  <div class="row">
+      <div class="input-field col s6">   
+       <strong>   
+         <?php if (isset($myfarms_details) && isset($myfarms_details->name))  echo $myfarms_details->name; ?>
+    </strong>  
+      </div>
 
-  	<h5 class="header center boutique section-title">List of farms</h5>
+      <div class="input-field col s6">
+        &nbsp;
+      </div>
+ </div>   
+
+ <div id="googleMap" style="width:100%;height:400px; align:center"></div>  
+
   
 
-     <table style="border-spacing: 0px; width:100%; margin-left:auto;margin-right:auto;">
-     <!-- Farms -->
-     <thead>
-     <tr>
-      <th>
-          Id 
-     </th>
-    
-     <th>
-          Name
-     </th>
-    
-     <th>
-          Location
-     </th>
 
-     <th>
-          &nbsp;
-     </th>
      
-     <th style="align:center">
-           Established
-     </th>
-     
-    </tr>
-    </thead>
-
-    <tbody>
-  
-    <?php
-         
-     // list of farms
-     if (isset($list_all_farms)) // Checking if the array exists and contains value
-     {      
-      $i=0;      
-
-        if (isset($list_all_farms)) {
-         foreach ($list_all_farms as $farms) 
-         {         
-        
-         $farms->farm_id;
-         $style="height: 5px; background-color: #D3D3D3";    
-         $result1 =($i % 2);
-        if ($result1==True)    $style="height: 5px; background-color: #FFFFFF"; 
-        $my_id    =0;   
-        if(isset($farms->farm_id)) $my_id  = $farms->farm_id; 
-       
-        $link_farm_details=$link_farms."&action=details"."&view=".base64_encode($my_id); 
-        $link_farm_location=$link_farms."&action=location"."&view=".base64_encode($my_id); 
-     ?>
-        <tr style="<?php if (isset($style)) echo $style; ?> ">
-         <td style="height:3px; border-radius:0px;" width="50" colspan="1">
-         <a title="click to have statistics" href="<?php echo $link_farm_details; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
-          <strong>
-           <?php 
-              $prefix    ='1000000'; 
-              
-              if (strlen('100000')>strlen($farms->farm_id)){
-               $nbr_diff =strlen('100000')-strlen($farms->farm_id); 
-               $prefix   =substr($prefix, 0, (strlen('100000')-1));    
-               echo $prefix.$farms->farm_id;
-              }else{
-                echo $farms->farm_id;
-              }
-           ?>
-          </strong> 
-         </a> 
-        </td>
-
-        <td>
-          <?php if (isset($farms->name)) echo $farms->name; ?>
-        </td>
-
-         <td style="align:right">
-         <a title="See my location" href="<?php if(isset($link_farm_location)) echo $link_farm_location; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
-            <?php
-                 if (isset($farms->location)) echo $farms->location; 
-            ?>       
-         </a>           
-        </td>
-
-
-        <td style="align:left"> 
-         <a title="See my location" href="<?php if(isset($link_farm_location)) echo $link_farm_location; ?>" style="font-weight: bold; color:#000;text-decoration: underline">
-          <img  title="My location" width="25" height="20"  src="images/location_icon_nobg.png"/>
-         </a>
-        </td>
-
-        <td>
-          <?php 
-          
-          // Information on my farms  
-          $farms_details  = Array();
-          $date           = null;     
-          if(isset($farms->farm_id) && $farms->farm_id>0) {
-            $farms_details  = CallAPI("GET", "",$global['api_url']."/v1/farms/".$farms->farm_id."");  
-            if(isset($farms_details->established)) {             
-              $date = $farms_details->established;
-            }
-          }
-          
-          if (isset($date) && $date!=null) {
-              echo strftime("%a, %d %b %g - %Hh %M", strtotime($date)); 
-          }
-          
-          ?>
-        </td>
-
- 
-       </tr>
-
-        <?php    
-         $i++;     
-      }
-     }        
-    } 
-   ?>
-    </tbody>
-   </table>
   </form>
 
 </div>
 </div>
+
+
+<script type="text/javascript">
+  var map;
+  function getData() {
+    $.ajax({
+    url: "map_api_wrapper.php?city=<?php echo $city; ?>",
+    async: true,
+    dataType: 'json',
+    success: function (data) {
+      //console.log(data);
+      //load map
+      init_map(data);
+    }
+  });  
+  }
+  
+  function init_map(data) {
+
+          console.log(data);
+
+        var map_options = {
+            //zoom: 14,
+            zoom: 10,
+
+            center: new google.maps.LatLng(data['latitude'], data['longitude'])
+          }
+        map = new google.maps.Map(document.getElementById("googleMap"), map_options);
+       marker = new google.maps.Marker({
+            map: map,
+            position: new google.maps.LatLng(data['latitude'], data['longitude'])
+        });
+        infowindow = new google.maps.InfoWindow({
+            content: data['formatted_address']
+        });
+        google.maps.event.addListener(marker, "click", function () {
+            infowindow.open(map, marker);
+        });
+        infowindow.open(map, marker);
+    }
+
+</script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc2tnDO_myHclHAvgxQUmvTwSdPJnpWDU&callback=getData"></script>
+

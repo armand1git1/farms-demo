@@ -13,7 +13,9 @@ if (!defined('MAINFILE_INCLUDED'))
   <meta name="language" content="en">
   <meta http-equiv="content-language" content="fr">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!--
   <meta name="viewport" content="width=device-width, init5ial-scale=1">
+-->
 
   <meta name="theme-color" content="#33691e">
   <title>Farms Demo</title>
@@ -36,12 +38,20 @@ if (!defined('MAINFILE_INCLUDED'))
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }  
+  </style>
   <!-- Ui for calendar (pop up) -->  
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
   <!-- Calendar script (js) -->
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 </head>
 
@@ -107,24 +117,24 @@ if (!defined('MAINFILE_INCLUDED'))
     ?>
 </section>
 
+<!--
+ <div id="googleMap" style="width:80%;height:400px; align:center"></div>  
+    --> 
+
 <footer class="orange" >
  <div class="footer-copyright">
     <div class="container">
     &copy; Copyright, All rights reserved.</div>
   </div>
-</footer>
 
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/js/materialize.min.js"></script>
-<script>
-    $(document).ready(function(){
-      $(".dropdown-button").dropdown();
-      $('.tooltipped').tooltip();
-      $(".button-collapse").sideNav();
-    });
-</script>
   
+
+
+<?php 
+//src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc2tnDO_myHclHAvgxQUmvTwSdPJnpWDU&callback=getData" async defer
+?>
+
+</footer>  
  </body>
 
 </html>

@@ -42,6 +42,29 @@
    } 
  } 
  break;
+
+ case "location":
+  $info_farms_details             =Array();      
+  $myfarms_details                =Array();
+  $myfamr_index                   =0;
+  $city                           ="tampere";
+
+ if (isset($_GET['view'])) {               // get the transaction val 
+    $farm_index_decode            = base64_decode($_GET['view']);  // decode and decrease so that it can fit the array logic         
+    //echo $farm_index_decode;  
+    if(intval($farm_index_decode)>0) {
+
+      $myfamr_index               = $farm_index_decode;             
+      $myfarms_details            = CallAPI("GET", "",$global['api_url']."/v1/farms/".$myfamr_index."");  // My farms details
+     
+      if (isset($myfarms_details->location))
+      {
+        $city = $myfarms_details->location;
+      } 
+  }
+
+ } 
+ break;
   
 
  default:
