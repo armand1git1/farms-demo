@@ -15,6 +15,12 @@ For building, I used my teenager’s package: php, html,css, JavaScript(Jquery).
 -          Code Source: Web/farms-demo
 -          Platform : Visual Studio Code version : 1.63.2 (user setup), Laragon  Full 4.0.14, php 7.4.25
 
+*** Fonctionnalities :
+- Graph : displayed at the main page. 
+- List of farm ( click on "Farm" on top right of the web page "
+  - If you click on any farm you will have the detailled stats
+  - If you click on any location , you will have the location on Google map opened on a new page.
+
 ***Android Version***:  To be cloned and configured (localhost:8080 cannot be accessible via Android devices, read Challenges faced below)
 
 -  Technologies: Java/Android (minSdkVersion 28, targetSdkVersion 31), Volley and Asynchronous tasks used to fetch data on  Api (exercise-server.jar).  ListView.  

@@ -87,5 +87,7 @@
 
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBc2tnDO_myHclHAvgxQUmvTwSdPJnpWDU&callback=getData"></script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=<?php echo $global['google_maps_keys']; ?>&callback=getData"></script>
+
 
