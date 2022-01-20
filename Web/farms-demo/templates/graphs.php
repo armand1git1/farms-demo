@@ -34,25 +34,37 @@
  <div class="row">
       <div class="input-field col s6" style="width:50px; background-color: #59922b">&nbsp;</div>
 
-      <div class="input-field col s6" style="width:200px">      
-        <label style="color:#000000">Friman Metsola Collective</label>
+      <div class="input-field col s6" style="width:210px">     
+        <a title="See my location" target="_blank" href="<?php if(isset($link_farms_Friman)) echo $link_farms_Friman; ?>" style="font-weight: bold; color:#000;text-decoration: underline">          
+              Friman Metsola Collective
+        </a>      
+        
       </div>
 
+  
+
       <div class="input-field col s6" style="width:50px; margin-left:20px; background-color: #f05b4f">&nbsp;</div>
-      <div class="input-field col s6" style="width:170px">      
-        <label style="color:#000000">PartialTech Research</label>
+      <div class="input-field col s6" style="width:180px">  
+        <a title="See my location" target="_blank" href="<?php if(isset($link_farms_PartialTech)) echo $link_farms_PartialTech; ?>" style="font-weight: bold; color:#000;text-decoration: underline">          
+              PartialTech Research         
+        </a>      
       </div>
 
       <div class="input-field col s6" style="width:50px; margin-left:20px; background-color: #f4c63d">&nbsp;</div>
-      <div class="input-field col s6" style="width:70px">      
-        <label style="color:#000000">Noora</label>
+      <div class="input-field col s6" style="width:30px">      
+        <a title="See my location" target="_blank" href="<?php if(isset($link_farms_Noora)) echo  $link_farms_Noora; ?>" style="font-weight: bold; color:#000;text-decoration: underline">          
+          Noora
+        </a>  
       </div>
 
       <div class="input-field col s6" style="width:50px; margin-left:50px; background-color: #d2691e">&nbsp;</div>
-      <div class="input-field col s6" style="width:170px">      
-        <label style="color:#000000">Organic Ossi's Impact</label>
+      <div class="input-field col s6" style="width:190px">      
+        <a  title="See my location" target="_blank" href="<?php if(isset($link_farms_Organic)) echo $link_farms_Organic; ?>" style="font-weight: bold; color:#000;text-decoration: underline">          
+          Organic Ossi's Impact
+        </a>
       </div>
 
+      
 
  </div>  
 

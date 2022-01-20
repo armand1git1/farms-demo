@@ -59,8 +59,38 @@
   
  
 
-  $test_data_serie1   =   $farms_senor_monthly;  
+  $test_data_serie1    =   $farms_senor_monthly;  
   $test_data_low1  =0;  //origin  
-  
+
+
+  $link_farms_Friman        ="#";
+  $link_farms_PartialTech   ="#";
+  $link_farms_Noora         ="#";
+  $link_farms_Organic       ="#";
+
+  //echo $link_farms;
+  $list_all_farms  = Array();
+
+  $list_all_farms  = CallAPI("GET", "",$global['api_url']."/v1/farms");  // get all farms list
+  if (isset($list_all_farms)) {
+    foreach ($list_all_farms as $farms) 
+    {   
+      if(isset($farms->name)) {
+        if (($farms->name)=="Friman Metsola Collective") {
+          $link_farms_Friman  =$link_farms."&action=location"."&view=".base64_encode($farms->farm_id); 
+        }   
+        if (($farms->name)=="PartialTech Research Farm") {
+          $link_farms_PartialTech  =$link_farms."&action=location"."&view=".base64_encode($farms->farm_id); 
+        }   
+        if (($farms->name)=="Noora's Farm") {
+          $link_farms_Noora  =$link_farms."&action=location"."&view=".base64_encode($farms->farm_id); 
+        }   
+        if (($farms->name)=="Organic Ossi's Impact That Lasts Plantation") {
+          $link_farms_Organic  =$link_farms."&action=location"."&view=".base64_encode($farms->farm_id); 
+        }   
+      }      
+    }
+  }
+
  }
 ?>

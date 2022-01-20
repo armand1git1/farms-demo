@@ -12,7 +12,7 @@ $global['entry_display_per_page'] = 20;
 $global['admin_pages']            = array('admin','users','settings');
 $global['time_offset']            = 0;
 //local 
-
+//$global['api_url']                = "http://127.0.0.1:8080";
 // Online 
 $global['api_url']                 = "http://84.249.7.85";
 
