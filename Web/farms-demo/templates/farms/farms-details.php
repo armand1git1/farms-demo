@@ -51,13 +51,15 @@
       <div class="input-field col s6">      
       Sensor :&nbsp;        <input  type="hidden"  name="farm_detail_id"  maxlength="100" value="">    
       <select name="sensor_type" class="text">
-        <option value="ANY" <?php if (isset($_POST["transensor_typesac_stat"]) &&  ($_POST["sensor_type"]=="SELECTED")) echo "selected"; ?>>ANY</option>  
+        <!--
+        <option value="ANY" <?php if (isset($_POST["sensor_type"]) &&  ($_POST["sensor_type"]=="SELECTED")) echo "selected"; ?>>ANY</option>  
+        -->
         <?php 
            
           if(isset( $Array_sensortype) && is_array($Array_sensortype)){
              for($i=0; $i<count($Array_sensortype); $i++) {   
             ?>      
-            <option value="<?php if (isset($Array_sensortype[$i])) echo $i; ?>" <?php if (isset($_POST["sensor_type"]) && ($_POST["sensor_type"]==$i)) {echo "selected";}?>>
+            <option value="<?php if (isset($Array_sensortype[$i])) echo $Array_sensortype[$i]; ?>" <?php if (isset($_POST["sensor_type"]) && ($_POST["sensor_type"]==$i)) {echo "selected";}?>>
                     <?php if  (isset($Array_sensortype[$i])) echo $Array_sensortype[$i]; ?> 
             </option>
           <?php
@@ -74,9 +76,16 @@
 
  <div class="row">
     <div class="input-field col s6">
-      <input class="btn" type="submit" name="paiement_method" value="Search" >
+      <input class="btn" type="submit" name="btn_sentortype" value="Search" >
     </div>  
  </div> 
+
+ <div class="row">
+    <div class="input-field col s6">
+    <label  class="darktext" style="font-size:20px" > <?php if (isset($sensor_type)) echo $sensor_type;?>  </label>
+    </div>  
+ </div> 
+ <br />
 
      <table style="border-spacing: 0px; width:100%; margin-left:auto;margin-right:auto;">
      <!-- Transactions -->
@@ -87,15 +96,19 @@
      </th>
     
      <th>
-          Sensor
+          Average
      </th>
     
      <th>
-          Value
+          Median
+     </th>
+
+     <th>
+       Standard deviation
      </th>
      
      <th style="align:righ; width:200px">
-           date & time
+       Period    
      </th>
      
     </tr>
@@ -109,10 +122,12 @@
      if (isset($info_farms_details)) // Checking if the array exists and contains value
      {      
       $i=0;        
-        foreach ($info_farms_details->measurements as $farms) 
+      //if(isset($info_farms_details->measurements)){      
+        //foreach ($info_farms_details->measurements as $farms) 
+        foreach ($info_farms_details->stats as $farmsstats) 
         {         
-        
-         $farms->farm_id;
+ 
+         //$farms->farm_id;
          $style="height: 5px; background-color: #D3D3D3";    
          $result1 =($i % 2);
         if ($result1==True)    $style="height: 5px; background-color: #FFFFFF";  
@@ -123,8 +138,8 @@
            <?php 
               $prefix    ='1000000'; 
               
-              if (strlen('100000')>strlen($farms->farm_id)){
-               $nbr_diff =strlen('100000')-strlen($farms->farm_id); 
+              if (strlen('100000')>strlen($i)){
+               $nbr_diff =strlen('100000')-strlen($i); 
                $prefix   =substr($prefix, 0, (strlen('100000')-1));    
                echo $prefix.$i;
               }else{
@@ -136,12 +151,18 @@
         </td>
 
         <td>
-          <?php if (isset($farms->sensor_type)) echo $farms->sensor_type; ?>
+          <?php if (isset($farmsstats->average)) echo $farmsstats->average; ?>
         </td>
 
          <td>
            <?php
-                 if (isset($farms->value)) echo $farms->value; 
+                  if (isset($farmsstats->median)) echo $farmsstats->median; 
+            ?>         
+        </td>
+
+        <td>
+           <?php
+                  if (isset($farmsstats->standard_deviation)) echo $farmsstats->standard_deviation; 
            ?>
         </td>
 
@@ -150,13 +171,20 @@
           // Information on my farms  
           $farms_details  = Array();
           $date           = null;     
-          if(isset($farms->datetime)) {                      
-              $date = $farms->datetime;
+          $month          = 0;  
+          if(isset($farmsstats->month) && isset($farmsstats->year)) {   
+              if (isset($farmsstats->month)) {
+                $month          = $farmsstats->month;
+                if ($farmsstats->month<10) {
+                  $month="0".$farmsstats->month; 
+                }
+              }                   
+              $date = $farmsstats->year."-".$month;
           }
           
           
           if (isset($date) && $date!=null) {
-              echo strftime("%a, %d %b %g - %Hh %M", strtotime($date)); 
+              echo $date; 
           }
           
          ?>
@@ -165,10 +193,9 @@
        </tr>
 
         <?php    
-         if ($i==20) break;
-         $i++;           
-        
-      }        
+        if ($i==50) break;
+         $i++;  
+      }         
     } 
    ?>
     </tbody>
