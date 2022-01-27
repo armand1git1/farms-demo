@@ -15,7 +15,7 @@ require_once('includes/api.php');
 $current_date          = date('F d, Y');
 
 
-$global['module']      = isset($_REQUEST['module']) ? $_REQUEST['module'] : 'analytics';
+$global['module']      = isset($_REQUEST['module']) ? $_REQUEST['module'] : 'graphs';
 $global['script_name'] = (isset($global['module']) && $global['module']) ? $global['module'].'.php' : '';
 $global['action']      = "";if (isset($_GET['action']) && trim($_GET['action'])!="") $global['action']=$_GET['action'];
 
